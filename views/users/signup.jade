@@ -1,0 +1,21 @@
+extends ../templates/default
+
+block content
+    img(src="../images/familia.jpg" class="img-responsive center-block" alt="EDUFIN" width="220" height="10")
+    div(class='row')
+    div(class='col-md-6 col-md-offset-3')
+      div(class='panel panel-info')
+        div(class='panel-heading')= 'Registrarme'
+        div(class='panel-body')
+          form(action='/auth/signup' method='post' autocomplete='off')
+            div(class='form-group')
+              label(for="email")= 'Email'
+              input(required type='texto' name='email' id='email' placeholder='Email' class='form-control')
+            div(class='form-group')
+              label(for="nombre")= 'Nombre'
+              input(required type='text' name='nombre' id='nombre' placeholder='Nombre' class='form-control')
+            div(class='form-group')
+              label(for="password")= 'Password'
+              input(required type='password' name='password' id='password' placeholder='Password' class='form-control')
+            button(type="submit" class='btn btn-primary')= 'Registrarme'
+    

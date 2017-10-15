@@ -1,0 +1,19 @@
+extends templates/default
+block content
+  if !isAuthenticated
+    div(class="col-md-12 col-md-offset-0")
+      div(class="jumbotron") 
+        div(class="container")
+          p(align="center")=''
+          h1(align="center")= 'Bienvenido al Sistema de Educacion Financiera'
+            p(align="center")= 'Te Ayudaremos a Llevar una Buena Balanza de tu Dinero'
+             p(align="center")=''
+              img(src="./images/educacion2.png" class="img-responsive center-block" alt="condominios" width="420" height="10")
+
+  if isAuthenticated
+      h1(align="center")= 'Bienvenido'
+        p(align="center")= user.nombre
+          p(align="center")=''
+          p(align="center")=''
+            img(src="./images/educacion2.png" class="img-responsive center-block" alt="condominios" width="420" height="100")
+            p(align="center")='Bienvenido al Sistema de Educacion Financiera'

@@ -1,58 +1,34 @@
+
 nav(class="navbar navbar-default" id="estl")
   div(class="container-fluid")
     div(class="navbar-header")
+      div(class="nav navbar-nav navbar-right")
+        a(href="/")
+        img.img-resposive(src="../images/iconingri2.png" alt="xyf" width="60" height="60")
       button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
         span(class="sr-only")= 'Toggle navigation'
         span(class="icon-bar")
         span(class="icon-bar")
         span(class="icon-bar")
-      a(class="navbar-brand" href="/")='XyF'
-      img(alt="parking" src="../images/logo3.png" width="40" height="40")
+
     div(class="collapse navbar-collapse" id="bs-example-navbar-collapse-1")     
       ul(class="nav navbar-nav navbar-right")
+        li(style="padding:16px")
+          a(title="xyf" href="/" )='Inicio'
         if !isAuthenticated
-          li
-            a(href="/auth/signup" class="glyphicon glyphicon-user")=''
+          li(style="padding:16px")
+            a(href="/auth/signup")='Registrarse'
             
-          li
-            a(href="/auth/signin" class="glyphicon glyphicon-log-in")= ''
-            button(onclick="document.getElementById('id01').style.display='block'", style='width:auto;',href="/auth/signin" class="glyphicon glyphicon-log-in")
-    #id01.modal
-      form.modal-content.animate(action='/action_page.php')
-        .imgcontainer
-          span.close(onclick="document.getElementById('id01').style.display='none'", title='Close Modal') ×
-          img.avatar(src='../images/login.png', alt='Avatar' width="60" height="40")
-        .container
-          label
-            b Username
-          input(type='text', placeholder='Enter Username', name='uname', required='')
-          label
-            b Password
-          input(type='password', placeholder='Enter Password', name='psw', required='')
-          button(type='submit') Login
-          input(type='checkbox', checked='checked')
-          |  Remember me
-        .container(style='background-color:#f1f1f1')
-          button.cancelbtn(type='button', onclick="document.getElementById('id01').style.display='none'") Cancel
-          span.psw
-            | Forgot 
-            a(href='#') password?
-    script.
-      // Get the modal
-      var modal = document.getElementById('id01');
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-      if (event.target == modal) {
-      modal.style.display = "none";
-      }
-      }
-            
+          li(style="padding:16px")
+            a(href="/auth/signin")= 'Iniciar Sesion'
+
         if isAuthenticated
+
           li(class="dropdown")
             a(href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
             aria-haspopup="true" aria-expanded="false" class="glyphicon glyphicon-user")=user.nombre
               span(class="caret")
-            ul(class="dropdown-menu")
+              ul(class="dropdown-menu")
               li
                 a(href="/users/panel")='Perfil'
               li

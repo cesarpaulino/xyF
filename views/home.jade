@@ -4,16 +4,26 @@ block content
     div(class="col-md-12 col-md-offset-0")
       div(class="jumbotron") 
         div(class="container")
-          p(align="center")=''
-          h1(align="center")= 'Bienvenido al Sistema de Educacion Financiera'
-            p(align="center")= 'Te Ayudaremos a Llevar una Buena Balanza de tu Dinero'
-             p(align="center")=''
-              img(src="./images/educacion2.png" class="img-responsive center-block" alt="condominios" width="420" height="10")
+          h1= 'Welcome by Your Future'
+          h2= '!Engordando tu Futuro¡'
+          img(src="./images/educacion2.png" class="img-responsive center-block" alt="condominios" width="420" height="10")
+          h2='Te ayudaremos a conocer los Beneficios del Ahorro'
+          h2='Realizando una buena Balanza de tu Dinero'
+    div(class="col-md-12 col-md-offset-0")
+      div(class="jumbotron") 
+        div(class="container")
+            a(href="/auth/signin")
+              img(alt="xyf" src="../images/icon6.png" width="200" height="195" HSPACE="25" VSPACE="15") 
+            a(href="/auth/signin")
+              img(alt="xyf" href="/auth/signin" src="../images/icon7.png" width="200" height="195" HSPACE="35" VSPACE="15")
+            a(href="/auth/signin")
+              img(alt="xyf" href="/auth/signin" src="../images/icon8.png" width="200" height="195" HSPACE="45" VSPACE="15")
 
   if isAuthenticated
-      h1(align="center")= 'Bienvenido'
-        p(align="center")= user.nombre
-          p(align="center")=''
-          p(align="center")=''
+      h1= 'Bienvenido'
+        p= user.nombre
+          p=''
+          p=''
             img(src="./images/educacion2.png" class="img-responsive center-block" alt="condominios" width="420" height="100")
-            p(align="center")='Bienvenido al Sistema de Educacion Financiera'
+            p(align="center")='Te ayudaremos a conocer los Beneficios del Ahorro'
+            p(align="center")='Te ayudamos a realizar una buena Balanza de tu Dinero'

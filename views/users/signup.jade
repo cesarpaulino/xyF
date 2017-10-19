@@ -1,21 +1,52 @@
-extends ../templates/default
-
-block content
-    img(src="../images/familia.jpg" class="img-responsive center-block" alt="EDUFIN" width="220" height="10")
-    div(class='row')
-    div(class='col-md-6 col-md-offset-3')
-      div(class='panel panel-info')
-        div(class='panel-heading')= 'Registrarme'
-        div(class='panel-body')
-          form(action='/auth/signup' method='post' autocomplete='off')
-            div(class='form-group')
-              label(for="email")= 'Email'
-              input(required type='texto' name='email' id='email' placeholder='Email' class='form-control')
-            div(class='form-group')
-              label(for="nombre")= 'Nombre'
-              input(required type='text' name='nombre' id='nombre' placeholder='Nombre' class='form-control')
-            div(class='form-group')
-              label(for="password")= 'Password'
-              input(required type='password' name='password' id='password' placeholder='Password' class='form-control')
-            button(type="submit" class='btn btn-primary')= 'Registrarme'
+button#myBtn.btn.btn-link.btn-primary(type='button') Registrarse
+#myModal.modal.fade(role='dialog')
+  .modal-dialog
+    // Modal content
+    .modal-content
+      .modal-header(style='padding:35px 50px;')
+          button.close(type='button', data-dismiss='modal') ×
+          h4
+          span.glyphicon.glyphicon-lock
+          |  Registrarme
+      .modal-body(style='padding:40px 50px;')
+        form(action='/auth/signup' method='post' autocomplete='off')
+                  
+          .form-group
+            label(for='email')
+              span.glyphicon.glyphicon-envelope
+              |  Email
+            input#usrname.form-control(required type='email' name='email' placeholder='Email')
+          .form-group
+              label(for='nombre')
+              span.glyphicon.glyphicon-user
+              |  Nombre
+              input#psw.form-control(required type='text' name='nombre' placeholder='Nombre' )
+          .form-group
+              label(for='password')
+              span.glyphicon.glyphicon-eye-open
+              |  Password
+              input#psw.form-control(required type='password' name='password' placeholder='Password' )
+          .checkbox
+              label
+              input(type='checkbox', value='', checked='')
+              | Remember me
+          button.btn.btn-success.btn-block(type='submit')
+              span.glyphicon.glyphicon-off
+              |  Registrarme
+      .modal-footer
+          button.btn.btn-danger.btn-default.pull-left(type='submit', data-dismiss='modal')
+              span.glyphicon.glyphicon-remove
+              |  Cancel
+          p
+          | Not a member? 
+          a(href='#') Sign Up
+          p
+          | Forgot 
+          a(href='#') Password?
+script.
+    $(document).ready(function(){
+    $("#myBtn").click(function(){
+    $("#myModal").modal();
+    });
+    });
     

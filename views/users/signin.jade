@@ -1,20 +1,16 @@
+extends ../templates/default
+link(rel='stylesheet', href='/stylesheets/signin.css')
 
-#myModal.modal.fade(role='dialog')
-  .modal-dialog
+block content
+
+  body
     .loginBox
       img.user(src='../images/login.png')
-      h2 Inicie Sesión
+      h2 Log In Here
       form
-        p Correo Electrónico
-        input(type='text', email='', placeholder='Correo Electronico')
+        p Correo
+        input(type='text', name='', placeholder='Enter Email')
         p Contraseña
-        input(type='Password', name='', placeholder='*********')
-        input(type='submit', name='', value='Iniciar Sesión')
+        input(type='Password', name='', placeholder='••••••')
+        input(type='submit', name='', value='Sign In')
         a(href='#') Forget Password
-    
-  script.
-    $(document).ready(function(){
-    $("#myBtn").click(function(){
-    $("#myModal").modal();
-      });
-      });

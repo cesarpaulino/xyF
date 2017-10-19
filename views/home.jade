@@ -2,23 +2,26 @@ extends templates/default
 block content
   if !isAuthenticated
     div(class="col-md-12 col-md-offset-0")
-      div(class="jumbotron") 
-        div(class="container")
+      div(class="jumbotron" id="estl") 
+        div(class="container" id="estl")
           h1= 'Welcome by Your Future'
           h2= '!Engordando tu Futuro¡'
           img(src="./images/educacion2.png" class="img-responsive center-block" alt="condominios" width="420" height="10")
           h2='Te ayudaremos a conocer los Beneficios del Ahorro'
           h2='Realizando una buena Balanza de tu Dinero'
     div(class="col-md-12 col-md-offset-0")
-      div(class="jumbotron") 
-        div(class="container")
+      div(class="jumbotron" id="estl") 
+        div(class="container" id="estl")
             a(href="/auth/signin")
-              img(alt="xyf" src="../images/icon6.png" width="200" height="195" HSPACE="25" VSPACE="15") 
+              img(alt="xyf" src="../images/icon6.png" width="200" height="195" HSPACE="100" VSPACE="7") 
             a(href="/auth/signin")
-              img(alt="xyf" href="/auth/signin" src="../images/icon7.png" width="200" height="195" HSPACE="35" VSPACE="15")
+              img(alt="xyf" href="/auth/signin" src="../images/icon7.png" width="200" height="195" HSPACE="15" VSPACE="7")
             a(href="/auth/signin")
-              img(alt="xyf" href="/auth/signin" src="../images/icon8.png" width="200" height="195" HSPACE="45" VSPACE="15")
-
+              img(alt="xyf" href="/auth/signin" src="../images/icon8.png" width="200" height="195" HSPACE="15" VSPACE="7")
+        h2='Educacion Financiera'
+        h2='Educacion Financiera Para el Exito' 
+        h2='Hay que programarnos para el Exito'
+        h2='Hay que programarnos para Triunfar'
   if isAuthenticated
       h1= 'Bienvenido'
         p= user.nombre

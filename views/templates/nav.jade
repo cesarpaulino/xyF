@@ -1,25 +1,23 @@
-
 nav(class="navbar navbar-default" id="estl")
   div(class="container-fluid")
     div(class="navbar-header")
-      div(class="nav navbar-nav navbar-right")
-        a(href="/")
-        img.img-resposive(src="../images/iconingri2.png" alt="xyf" width="60" height="60")
       button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
         span(class="sr-only")= 'Toggle navigation'
         span(class="icon-bar")
         span(class="icon-bar")
         span(class="icon-bar")
+      a(href="/")
+        img(src="../images/iconingri2.png" alt="xyf" width="60" height="60" HSPACE="15" VSPACE="7")
 
     div(class="collapse navbar-collapse" id="bs-example-navbar-collapse-1")     
       ul(class="nav navbar-nav navbar-right")
-        li(style="padding:16px")
+        li(style="padding:18px")
           a(title="xyf" href="/" )='Inicio'
         if !isAuthenticated
-          li(style="padding:16px")
+          li(style="padding:18px")
             a(href="/auth/signup")='Registrarse'
             
-          li(style="padding:16px")
+          li(style="padding:18px")
             a(href="/auth/signin")= 'Iniciar Sesion'
 
         if isAuthenticated

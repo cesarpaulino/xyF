@@ -1,52 +1,18 @@
-button#myBtn.btn.btn-link.btn-primary(type='button') Registrarse
-#myModal.modal.fade(role='dialog')
-  .modal-dialog
-    // Modal content
-    .modal-content
-      .modal-header(style='padding:35px 50px;')
-          button.close(type='button', data-dismiss='modal') ×
-          h4
-          span.glyphicon.glyphicon-lock
-          |  Registrarme
-      .modal-body(style='padding:40px 50px;')
-        form(action='/auth/signup' method='post' autocomplete='off')
-                  
-          .form-group
-            label(for='email')
-              span.glyphicon.glyphicon-envelope
-              |  Email
-            input#usrname.form-control(required type='email' name='email' placeholder='Email')
-          .form-group
-              label(for='nombre')
-              span.glyphicon.glyphicon-user
-              |  Nombre
-              input#psw.form-control(required type='text' name='nombre' placeholder='Nombre' )
-          .form-group
-              label(for='password')
-              span.glyphicon.glyphicon-eye-open
-              |  Password
-              input#psw.form-control(required type='password' name='password' placeholder='Password' )
-          .checkbox
-              label
-              input(type='checkbox', value='', checked='')
-              | Remember me
-          button.btn.btn-success.btn-block(type='submit')
-              span.glyphicon.glyphicon-off
-              |  Registrarme
-      .modal-footer
-          button.btn.btn-danger.btn-default.pull-left(type='submit', data-dismiss='modal')
-              span.glyphicon.glyphicon-remove
-              |  Cancel
-          p
-          | Not a member? 
-          a(href='#') Sign Up
-          p
-          | Forgot 
-          a(href='#') Password?
-script.
-    $(document).ready(function(){
-    $("#myBtn").click(function(){
-    $("#myModal").modal();
-    });
-    });
-    
+extends ../templates/default
+link(rel='stylesheet', href='/stylesheets/signup.css')
+
+block content
+
+  body
+    .loginBox
+      img.user(src='../images/login.png')
+      h2 Log In Here
+      form
+        p Nombre
+        input(type='text', name='', placeholder='Enter Email')
+        p Correo
+        input(type='text', name='', placeholder='Enter Email')
+        p Contraseñ
+        input(type='Password', name='', placeholder='••••••')
+        input(type='submit', name='', value='Sign In')
+        a(href='#') Forget Password
